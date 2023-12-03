@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import requests
+import sys
 import pickle
 import numpy as np
 from flask_cors import CORS
@@ -10,23 +10,11 @@ CORS(app, resources={r"/predict/*": {"origins": "https://trabalho-si-ai.onrender
          methods=['POST'], 
          allow_headers=['Content-Type'],
          supports_credentials=True)
-# arquivo https://drive.google.com/file/d/1hgpkAYYgCwpXJzMbgszkGTuZfcJXMgQk/view?usp=sharing
-file_id = '1MaSoxyVxxKsuie_a2SlOGeVVt_fRsEu2'
-url = f'https://drive.google.com/uc?id={file_id}'
 
-response = requests.get(url)
-
-if response.status_code == 200:
-    with open('modelo_e_scaler.pkl', 'wb') as file:
-        file.write(response.content)
-
-    # Carregar o modelo e o scaler
-    with open('modelo_e_scaler.pkl', 'rb') as file:
-        dados_salvos = pickle.load(file)
-        modelo_treinado = dados_salvos['modelo']
-        scaler = dados_salvos['scaler']
-else:
-    sys.exit(f"Falha ao baixar o arquivo. Código de status: {response.status_code}")
+with open('https://sfo3.digitaloceanspaces.com/trabalho-si/predicao_de_casas_scaler.pkl', 'rb') as file:
+    dados_salvos = pickle.load(file)
+    modelo_treinado = dados_salvos['modelo']
+    scaler = dados_salvos['scaler']
 
 @app.route('/predict', methods=['POST'])
 @cross_origin()
