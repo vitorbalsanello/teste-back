@@ -11,7 +11,7 @@ CORS(app, resources={r"/predict/*": {"origins": "https://trabalho-si-ai.onrender
          allow_headers=['Content-Type'],
          supports_credentials=True)
 
-with open('C:/Users/admin/Desktop/predicao_de_casas_scaler.pkl', 'rb') as file:
+with open('https://drive.google.com/file/d/1MaSoxyVxxKsuie_a2SlOGeVVt_fRsEu2/view?usp=sharing', 'rb') as file:
     dados_salvos = pickle.load(file)
     modelo_treinado = dados_salvos['modelo']
     scaler = dados_salvos['scaler']
