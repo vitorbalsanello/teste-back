@@ -8,7 +8,7 @@ from flask_cors import cross_origin
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict/*": {"origins": "https://trabalho-si-ai.onrender.com/"}},
+CORS(app, resources={r"/predict/*": {"origins": "https://trabalho-si-ai.onrender.com"}},
          methods=['POST'], 
          allow_headers=['Content-Type'],
          supports_credentials=True)
