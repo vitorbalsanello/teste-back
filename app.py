@@ -10,7 +10,7 @@ CORS(app, resources={r"/predict/*": {"origins": "https://trabalho-si-ai.onrender
          methods=['POST'], 
          allow_headers=['Content-Type'],
          supports_credentials=True)
-
+# arquivo https://drive.google.com/file/d/1hgpkAYYgCwpXJzMbgszkGTuZfcJXMgQk/view?usp=sharing
 file_id = '1MaSoxyVxxKsuie_a2SlOGeVVt_fRsEu2'
 url = f'https://drive.google.com/uc?id={file_id}'
 
