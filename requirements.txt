@@ -27,3 +27,4 @@ numpy==1.23.5
 requests==2.26.0
 build-essential
 python3-dev
+build-essential
