@@ -18,6 +18,7 @@ psutil==5.9.6
 pylint==3.0.2
 tomlkit==0.12.1
 Werkzeug==2.3.7
-numpy==1.23.5
+numpy
 requests==2.26.0
 scikit-learn==1.0.2
+scipy
