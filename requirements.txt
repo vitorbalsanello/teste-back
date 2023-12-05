@@ -19,5 +19,5 @@ tomlkit==0.12.1
 Werkzeug==2.3.7
 numpy
 requests==2.26.0
-scikit-learn
+scikit-learn==1.2.1
 scipy
