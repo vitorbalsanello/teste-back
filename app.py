@@ -8,7 +8,7 @@ from flask_cors import cross_origin
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict*": {"origins": "https://trabalho-si-ai.onrender.com"}},
+CORS(app, resources={r"/predict": {"origins": "*"}},
          methods=['POST'], 
          allow_headers=['Content-Type'],
          supports_credentials=True)
@@ -30,6 +30,10 @@ def carregar_modelo_e_scaler():
         return False
 
     return True
+
+@app.route('/teste', methods=['GET'])
+def teste():
+    return jsonify({'message': 'Teste na rota GET'}), 200
 
 @app.route('/predict', methods=['POST'])
 @cross_origin()
